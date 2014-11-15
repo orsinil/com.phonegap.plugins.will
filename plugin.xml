@@ -18,15 +18,15 @@
         <clobbers target="cordova.plugins.will" />
     </js-module>
 
-	  <platform name="android">
-
+<platform name="android">
+	<source-file src="src/android/com/phonegap/plugins/will/willplugin.java" target-dir="src/com/phonegap/plugins/will" />
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="willplugin">
         <param name="android-package" value="com.phonegap.plugins.will.willplugin" />
       </feature>
     </config-file>
 
-    <source-file src="src/android/com/phonegap/plugins/will/willplugin.java" target-dir="src/com/phonegap/plugins/will" />
+    
 
   </platform>
 
