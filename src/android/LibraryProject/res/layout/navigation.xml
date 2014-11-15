@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.wacom.toolsconfigurator"
+    android:id="@+id/navbar1_container"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:background="@color/navbar_bg_color"
+    android:gravity="center|center_vertical"
+    android:orientation="vertical" >
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/vspacing" />
+
+    <com.wacom.toolsconfigurator.ui.TintableImageView
+        android:id="@+id/btn_settings"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnSettingsClicked"
+        android:src="@drawable/btn_settings"
+        app:tint="@color/custom_imageview_color_selector" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+    
+    <com.wacom.toolsconfigurator.ui.TintableImageView
+        android:id="@+id/btn_pen"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnToolClicked"
+        android:src="@drawable/btn_pen1"
+        app:tint="@color/custom_imageview_color_selector" />
+
+    <com.wacom.toolsconfigurator.ui.TintableImageView
+        android:id="@+id/btn_eraser"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnToolClicked"
+        android:src="@drawable/btn_eraser"
+        app:tint="@color/custom_imageview_color_selector" />
+
+    <com.wacom.toolsconfigurator.ui.TintableImageView
+        android:id="@+id/btn_clear"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnClearClicked"
+        android:src="@drawable/btn_clear"
+        app:tint="@color/custom_imageview_color_selector" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <ImageView
+        android:id="@+id/btn_color1"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnColorClicked"
+        android:src="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <ImageView
+        android:id="@+id/btn_color2"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnColorClicked"
+        android:src="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <ImageView
+        android:id="@+id/btn_color3"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnColorClicked"
+        android:src="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <ImageView
+        android:id="@+id/btn_color4"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnColorClicked"
+        android:src="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <ImageView
+        android:id="@+id/btn_color5"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnColorClicked"
+        android:src="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0" />
+
+    <ImageView
+        android:id="@+id/btn_changebackground1"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnBackgroundClicked"
+        android:src="@drawable/drawable_btn_paper1" />
+
+    <ImageView
+        android:id="@+id/btn_changebackground2"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnBackgroundClicked"
+        android:src="@drawable/drawable_btn_paper2" />
+
+    <ImageView
+        android:id="@+id/btn_changebackground3"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="@dimen/btn_height"
+        android:contentDescription="@string/hello_world"
+        android:onClick="onBtnBackgroundClicked"
+        android:src="@drawable/drawable_btn_paper3" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/vspacing" />
+
+</LinearLayout>

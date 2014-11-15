@@ -1,0 +1,117 @@
+{
+	"renderingConfigs":
+	[
+		{
+			"name" : "Pencil (middle)",
+			"wetEdges" : false,
+			"layerBlendMode" : "NORMAL",
+			"blendMode" : "NORMAL",
+			"identifier" : 1,
+			"scatterMethod" : {
+				"enabled" : true,
+				"rotateAlongTrajectory" : false,
+				"fillTexture" : "tool_fill_6.png",
+				"shapeTexture" : "tool_shape_6.png",
+				"buildup" : false,
+				"randomizeFill" : true,
+				"rotateRandom" : true,
+				"spacing" : 0.15,
+				"scattering" : 0.15
+			},
+			"shapeFillMethod":
+			{
+				"enabled": false,
+				"gradientAntialiasingEnabled": true
+			}
+		}
+	],
+	"dynamicsConfigs":
+	[
+		{
+			"name" : "Pencil (middle)",
+			"radiusConfig" : {
+				"flip" : true,
+				"functionParameter" : 1,
+				"function" : "POWER",
+				"minValue" : 2,
+				"maxValue" : 2.5,
+				"smoothing" : {
+					"beta" : 0,
+					"alpha" : 0.4
+				}
+			},
+			"alphaConfig" : {
+				"flip" : true,
+				"functionParameter" : 1,
+				"function" : "POWER",
+				"minValue" : 0.05,
+				"maxValue" : 0.2,
+				"smoothing" : {
+					"beta" : 0,
+					"alpha" : 0.4
+				}
+			},
+			"minVelocity" : 80,
+			"identifier" : 1,
+			"maxVelocity" : 1400,
+			"pressureConfig":
+			{
+				"enabled" : true,
+				"minPressure" : 1100,
+				"maxPressure" : 2050,
+				"radiusConfig" :
+				{
+					"functionParameter" : 1.0,
+					"function" : "POWER",
+					"minValue": 0.5,
+					"maxValue": 1.7
+				},
+				"alphaConfig": 
+				{
+	                "flip": false,
+	                "smoothing":
+	                {
+	                    "beta": 0,
+	                    "alpha": 0.55
+	                },
+	                "maxValue": 0.28,
+	                "functionParameter": 1,
+	                "minValue": 0,
+	                "function": "POWER"
+            	}
+			}
+		},
+		{
+			"name": "Eraser",
+			"identifier": 7,
+			"minVelocity": 720,
+			"maxVelocity": 3900,
+			"radiusConfig":
+			{
+				"minValue": 4,
+				"maxValue": 56,
+				"initialValue": 4,
+				"finalValue": 4,
+				"flip": false,
+				"function": "POWER",
+				"functionParameter": 1
+			},
+		"alphaConstantValue": 1
+		}
+	],
+	"tools":
+	[
+		{
+			"name": "Default",
+			"identifier": 1,
+			"rendererId": 1,
+			"dynamicsId": 1
+		},
+		{
+			"name": "Eraser",
+			"identifier": 7,
+			"dynamicsId": 7,
+			"isEraser": true
+		}
+	]
+}

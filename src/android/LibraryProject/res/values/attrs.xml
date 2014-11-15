@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <declare-styleable name="TintableImageView">
+        <attr name="tint" format="reference|color" />
+    </declare-styleable>
+
+    
+    <item name="tag_minradius" type="string">min_radius</item>
+    <item name="tag_maxradius" type="string">max_radius</item>
+    <item name="tag_min_alpha" type="string">min_alpha</item>
+    <item name="tag_max_alpha" type="string">max_alpha</item>
+    <item name="texture_option_tag" type="string">texture_option_tag</item>
+    <item name="texture_option_tag2" type="string">texture_option_tag2</item>
+    
+    <item name="tag_alpha_section" type="string">alpha_section</item>
+    
+    <item name="tag_texture_spacing" type="string">texture_spacing</item>
+    <item name="tag_texture_scattering" type="string">texture_scattering</item>
+</resources>

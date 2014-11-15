@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.wacom.toolsconfigurator"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="left|center_vertical" >
+        
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent"/>
+        
+	    <TextView 
+	        android:id="@+id/titleLabel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text=""
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textColor="@android:color/holo_blue_dark" />
+	    
+	    <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/minradius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMinRadius"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/minradius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnDecMinRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_left"
+            android:tag="@string/tag_minradius"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnIncMinRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_right"
+            android:tag="@string/tag_minradius"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/maxradius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMaxRadius"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/maxradius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnDecMaxRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_left"
+            android:tag="@string/tag_maxradius"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnIncMaxRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_right"
+            android:tag="@string/tag_maxradius"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/minvalue_label"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/minvalue"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMinValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/minvalue_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/maxvalue_label"
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/maxvalue"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMaxValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/maxvalue_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center_vertical" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/functionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:text="@string/reverse"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchReverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <RadioGroup
+            android:id="@+id/toolFunction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" >
+
+                <com.wacom.toolsconfigurator.ui.RadioButtonWithImage
+                    android:id="@+id/radioBtnExponential"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/exponential" />
+
+                <ImageView
+                    android:id="@+id/imageExponential"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/radioBtnExponential"
+                    android:contentDescription="@string/na"
+                    android:src="@drawable/img_function_exponential" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" >
+
+                <com.wacom.toolsconfigurator.ui.RadioButtonWithImage
+                    android:id="@+id/radioBtnSigmoid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sigmoid" />
+
+                <ImageView
+                    android:id="@+id/imageSigmoid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/radioBtnSigmoid"
+                    android:contentDescription="@string/na"
+                    android:src="@drawable/img_function_sigmoid" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0" >
+
+                <com.wacom.toolsconfigurator.ui.RadioButtonWithImage
+                    android:id="@+id/radioBtnPeriodic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/periodic" />
+
+                <ImageView
+                    android:id="@+id/imagePeriodic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/radioBtnPeriodic"
+                    android:contentDescription="@string/na"
+                    android:src="@drawable/img_function_periodic" />
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="@dimen/spacing"
+                android:layout_height="match_parent" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vspacing" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarFunctionParameter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/functionparameter_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/startradius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchStartRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarStartRadius"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/startradius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/endradius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchEndRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarEndRadius"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/endradius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/smoothing_radius"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchSmoothingRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarSmoothingRadius"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/smoothingradius_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    
+    <LinearLayout        
+        android:id="@+id/rowMinAlpha"
+        android:tag="@string/texture_option_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/min_alpha"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMinAlpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/minAlphaValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnDecMinAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_left"
+            android:tag="@string/tag_min_alpha"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnIncMinAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_right"
+            android:tag="@string/tag_min_alpha"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/rowMaxAlpha"
+        android:tag="@string/texture_option_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/max_alpha"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarMaxAlpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/maxAlphaValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnDecMaxAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_left"
+            android:tag="@string/tag_max_alpha"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.TintableImageView
+            android:id="@+id/btnIncMaxAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/na"
+            android:src="@drawable/btn_arrow_right"
+            android:tag="@string/tag_max_alpha"
+            app:tint="@color/custom_imageview_color_selector2" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/rowStartAlpha"
+        android:tag="@string/texture_option_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/start_alpha"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchStartAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarStartAlpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/startalpha_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowEndAlpha"
+        android:tag="@string/texture_option_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/end_alpha"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchEndAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarEndAlpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/endalpha_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rowSmoothing"
+        android:tag="@string/texture_option_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/row_height"
+        android:gravity="center" >
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="@dimen/label_width"
+            android:layout_height="wrap_content"
+            android:text="@string/smoothing_alpha"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <Switch
+            android:id="@+id/switchSmoothingAlpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <com.wacom.toolsconfigurator.ui.SeekBarWithTextField
+            android:id="@+id/seekBarSmoothingAlpha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/smoothingalpha_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/infobox_padding_left"
+            android:paddingRight="@dimen/infobox_padding_right"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Space
+            android:layout_width="@dimen/spacing"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_weight="1.0"
+        android:layout_height="0dp" />
+
+</LinearLayout>

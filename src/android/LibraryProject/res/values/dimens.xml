@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="label_width">120dp</dimen>
+    <dimen name="row_height">55dp</dimen>
+    <dimen name="infobox_padding_left">20dp</dimen>
+    <dimen name="infobox_padding_right">20dp</dimen>
+
+    
+    
+    <item name="navbar_space" format="dimension" type="dimen">10dp</item>
+    <item name="spacing" format="dimension" type="dimen">10dp</item>
+    <item name="vspacing" format="dimension" type="dimen">10dp</item>
+    <item name="arrow_btn_width" format="dimension" type="dimen">30dp</item>
+    <item name="btn_group_space" format="dimension" type="dimen">25dp</item>
+    <item name="navbar_right_space" format="dimension" type="dimen">20dp</item>
+    <item name="navbar_top_padding" format="dimension" type="dimen">15dp</item>
+    <item name="navbar_bottom_padding" format="dimension" type="dimen">15dp</item>
+    <item name="btn_width" format="dimension" type="dimen">44dp</item>
+    <item name="btn_height" format="dimension" type="dimen">44dp</item>
+    <item name="navbar_container_width" format="dimension" type="dimen">730dp</item>
+    <item name="navbar_container_height" format="dimension" type="dimen">74dp</item>
+    <item name="toolConfigViewWidth" format="dimension" type="dimen">600dp</item>
+    <item name="navbar_width" format="dimension" type="dimen">76dp</item>
+    <dimen name="export_dialog_export_info_padding">20dp</dimen>
+    <dimen name="export_dialog_width">200dp</dimen>
+
+</resources>
