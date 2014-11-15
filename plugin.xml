@@ -26,7 +26,7 @@
       </feature>
     </config-file>
 
-    <!--<source-file src="src\android\com\phonegap\plugins\will\willplugin.java" target-dir="src/android/com/phonegap/plugins/will" />-->
+    <source-file src="src\android\com\phonegap\plugins\will\willplugin.java" target-dir="src/com/phonegap/plugins/will" />
 	
   </platform>
 
