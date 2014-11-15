@@ -28,7 +28,6 @@
 
     <source-file src="src/android/LibraryProject/ic_launcher-web.png" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/lint.xml" target-dir="src/android/LibraryProject"/>
-<source-file src="src/android/LibraryProject/lista.txt" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/proguard-project.txt" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/project.properties" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/assets/defaulttools.json" target-dir="src/android/LibraryProject/assets"/>
