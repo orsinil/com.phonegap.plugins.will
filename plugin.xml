@@ -25,7 +25,7 @@
         <param name="android-package" value="com.phonegap.plugins.will.willplugin" />
       </feature>
     </config-file>
-
+<source-file src="src/android/LibraryProject/wacommInkLibraryAndroidjar.jar" target-dir="libs"/>
     <source-file src="src/android/LibraryProject/ic_launcher-web.png" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/lint.xml" target-dir="src/android/LibraryProject"/>
 <source-file src="src/android/LibraryProject/proguard-project.txt" target-dir="src/android/LibraryProject"/>
