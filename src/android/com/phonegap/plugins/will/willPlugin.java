@@ -39,7 +39,7 @@ public class willPlugin  extends CordovaPlugin 	{
 		    return false;
 		} catch(Exception e) {
 		    System.err.println("Exception: " + e.getMessage());
-		    callbackContext.error(e.getMessage());
+		    callbackContext.error("test" + e.getMessage());
 		    return false;
 		} 
 
