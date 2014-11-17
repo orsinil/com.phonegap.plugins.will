@@ -85,6 +85,11 @@ public class MainActivity extends Activity implements Ink{
 					}
 				});
 				
+				getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		setContentView(R.layout.activity_main);
+		
+		
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage("Look at this dialog!")
     	       .setCancelable(false)
