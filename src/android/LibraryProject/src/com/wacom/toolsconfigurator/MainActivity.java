@@ -7,7 +7,7 @@ package com.wacom.toolsconfigurator;
 
 import java.io.File;
 import java.util.LinkedList;
-
+import java.io.IOException;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.app.Activity;
