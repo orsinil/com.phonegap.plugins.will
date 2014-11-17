@@ -16,11 +16,11 @@ public class willPlugin  extends CordovaPlugin 	{
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
-			    	/*Intent intent = new Intent(this, MainActivity.class);
-					startActivity(intent);*/
+			    	Intent intent = new Intent(this, com.pinaround.MainActivity.class);
+					startActivity(intent);
 					
 					
-					callbackContext.error(this.cordova.getActivity().getApplicationContext().getPackageName());
+					/*callbackContext.error(this.cordova.getActivity().getApplicationContext().getPackageName());*/
 					return false;
 					
 					/*Intent intentOpen = new Intent(WILL_INTENT);
