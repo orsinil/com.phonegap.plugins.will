@@ -7,7 +7,6 @@ package com.wacom.toolsconfigurator;
 
 import java.io.File;
 import java.util.LinkedList;
-import java.io.IOException;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.app.Activity;
@@ -100,7 +99,7 @@ public class MainActivity extends Activity implements Ink{
 			}
 		});
 		
-		} catch (IOException e) {
+		} catch (Exception e) {
 
 				    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage(e.getMessage())
