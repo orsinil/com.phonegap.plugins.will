@@ -20,6 +20,22 @@
 
 <platform name="android">
 	<source-file src="src/android/com/phonegap/plugins/will/willPlugin.java" target-dir="src/com/phonegap/plugins/will" />
+	<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/CanvasModel.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Controller.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ExportDialogFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Ink.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/MainActivity.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/NavigationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/PressureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/TextureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ToolConfigurationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/VelocityToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/RadioButtonWithImage.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/SeekBarWithTextField.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/TintableImageView.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/utils/Utils.java" target-dir="src/com/wacom/toolsconfigurator/utils"/>
+
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="willPlugin">
         <param name="android-package" value="com.phonegap.plugins.will.willPlugin" />
@@ -55,6 +71,7 @@
 <source-file src="src/android/LibraryProject/assets/tool_shape_5.png" target-dir="assets"/>
 <source-file src="src/android/LibraryProject/assets/tool_shape_6.png" target-dir="assets"/>
 <source-file src="src/android/LibraryProject/bin/AndroidManifest.xml" target-dir="bin"/>
+
 
 <source-file src="src/android/LibraryProject/res/color/custom_button_text_color.xml" target-dir="res/color"/>
 <source-file src="src/android/LibraryProject/res/color/custom_imageview_color_selector.xml" target-dir="res/color"/>
@@ -146,21 +163,7 @@
 <source-file src="src/android/LibraryProject/res/values-sw720dp-land/dimens.xml" target-dir="res/values-sw720dp-land"/>
 <source-file src="src/android/LibraryProject/res/values-v11/styles.xml" target-dir="res/values-v11"/>
 <source-file src="src/android/LibraryProject/res/values-v14/styles.xml" target-dir="res/values-v14"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/CanvasModel.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Controller.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ExportDialogFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Ink.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/MainActivity.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/NavigationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/PressureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/TextureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ToolConfigurationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/VelocityToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/RadioButtonWithImage.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/SeekBarWithTextField.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ui/TintableImageView.java" target-dir="src/com/wacom/toolsconfigurator/ui"/>
-<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/utils/Utils.java" target-dir="src/com/wacom/toolsconfigurator/utils"/>
+
 
   <!-- plugman cannot merge - prepare manual merge -->
   
