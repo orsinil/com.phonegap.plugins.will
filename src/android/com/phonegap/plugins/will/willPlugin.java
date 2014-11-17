@@ -11,7 +11,7 @@ import android.content.Intent;
 public class willPlugin  extends CordovaPlugin 	{
 public static final int REQUEST_CODE = 0x0ba7c0df;
 	public static final String ACTION_ADD_WILL_ENTRY = "addWillEntry"; 
-	private static final String WILL_INTENT = "com.wacom.toolsconfigurator.MAIN2";
+	private static final String WILL_INTENT = "com.wacom.toolsconfigurator.MAIN";
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
