@@ -13,7 +13,8 @@ WillPlugin.open =  function(successCallback, errorCallback) {
 					successCallback, // success callback function
 					errorCallback, // error callback function
 					'willPlugin', // mapped to our native Java class called "CalendarPlugin"
-					'addWillEntry'
+					'addWillEntry',
+					[]
 				); 
      };
 
