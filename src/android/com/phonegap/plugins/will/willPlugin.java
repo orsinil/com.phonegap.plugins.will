@@ -16,12 +16,13 @@ public class willPlugin  extends CordovaPlugin 	{
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
-			    	Intent intent = new Intent("com.wacom.toolsconfigurator.MAIN");
+			    	Intent intent = new Intent(ctx.getContext(), com.wacom.toolsconfigurator.MainActivity.class);
+					ctx.startActivity(intent);
 					//view.getContext().startActivity(intent);
-					this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
+					//this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
 					
 					/*callbackContext.error(this.cordova.getActivity().getApplicationContext().getPackageName());*/
-					return false;
+					return true;
 					
 					/*Intent intentOpen = new Intent(WILL_INTENT);
 					intentOpen.addCategory(Intent.CATEGORY_DEFAULT);
