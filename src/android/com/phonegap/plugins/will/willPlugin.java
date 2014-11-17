@@ -9,44 +9,21 @@ import android.content.Intent;
 
 
 public class willPlugin  extends CordovaPlugin 	{
+public static final int REQUEST_CODE = 0x0ba7c0df;
 	public static final String ACTION_ADD_WILL_ENTRY = "addWillEntry"; 
-	private static final String WILL_INTENT = "android.intent.action.MAIN";
+	private static final String WILL_INTENT = "com.wacom.toolsconfigurator.MAIN";
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
-			    	Intent intent = new Intent(ctx.getContext(), com.wacom.toolsconfigurator.MainActivity.class);
-					ctx.startActivity(intent);
-					//view.getContext().startActivity(intent);
-					//this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
-					
-					/*callbackContext.error(this.cordova.getActivity().getApplicationContext().getPackageName());*/
-					return true;
-					
-					/*Intent intentOpen = new Intent(WILL_INTENT);
-					intentOpen.addCategory(Intent.CATEGORY_DEFAULT);
-					intentOpen.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
-				   this.cordova.startActivityForResult((CordovaPlugin) this, intentOpen, 0);
-				   return true;*/
-			   
-		    /*JSONObject arg_object = args.getJSONObject(0);
-		    Intent calIntent = new Intent(Intent.ACTION_EDIT)
-		        .setType("vnd.android.cursor.item/event")
-		        .putExtra("beginTime", arg_object.getLong("startTimeMillis"))
-		        .putExtra("endTime", arg_object.getLong("endTimeMillis"))
-		        .putExtra("title", arg_object.getString("title"))
-		        .putExtra("description", arg_object.getString("description"))
-		        .putExtra("eventLocation", arg_object.getString("eventLocation"));
-		 
-		       this.cordova.getActivity().startActivity(calIntent);
-		       callbackContext.success();*/
-		        //Intent intentOpen = new Intent(WILL_INTENT);
-		        //intentOpen.addCategory(Intent.CATEGORY_DEFAULT);
-		        // avoid calling other phonegap apps
-		        //intentOpen.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
+			    Intent intentScan = new Intent(WILL_INTENT);
+				intentScan.addCategory(Intent.CATEGORY_DEFAULT);
+				// avoid calling other phonegap apps
+				intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
-		        //this.cordova.startActivityForResult((CordovaPlugin) this, intentOpen, 0);
+				this.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
+				retrun true;
 		    }
 		    callbackContext.error("Invalid action");
 		    return false;
