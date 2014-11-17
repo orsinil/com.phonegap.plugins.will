@@ -90,10 +90,10 @@ public class MainActivity extends Activity implements Ink{
 		setContentView(R.layout.activity_main);
 		
 				SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
-
+		
 		
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    	builder.setMessage("Look at this dialog!")
+    	builder.setMessage(surfaceView)
     	       .setCancelable(false)
     	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
     	           public void onClick(DialogInterface dialog, int id) {
