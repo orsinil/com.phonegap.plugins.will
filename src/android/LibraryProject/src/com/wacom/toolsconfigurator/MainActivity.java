@@ -89,6 +89,14 @@ public class MainActivity extends Activity implements Ink{
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
 		
+				SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
+		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
+			
+			@Override
+			public void onReadyToStroke(StrokeInkCanvas canvas) {
+
+			}
+		});
 		
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage("Look at this dialog!")
