@@ -175,11 +175,9 @@
 <source-file src="src/android/LibraryProject/res/layout-xlarge-land-v19/tool_settings.xml" target-dir="res/layout-xlarge-land-v19"/>
 <source-file src="src/android/LibraryProject/res/menu/main.xml" target-dir="res/menu"/>
 
-<!--<source-file src="src/android/LibraryProject/res/values/arrays.xml" target-dir="res/values"/>-->
 <source-file src="src/android/LibraryProject/res/values/attrs.xml" target-dir="res/values"/>
-<source-file src="src/android/LibraryProject/res/values/dimens.xml" target-dir="res/values"/>
+
 <source-file src="src/android/LibraryProject/res/values/inkingengine_configuration.xml" target-dir="res/values"/>
-<source-file src="src/android/LibraryProject/res/values/strings.xml" target-dir="res/values"/>
 <source-file src="src/android/LibraryProject/res/values/styles.xml" target-dir="res/values"/>
 <source-file src="src/android/LibraryProject/res/values-sw600dp/dimens.xml" target-dir="res/values-sw600dp"/>
 <source-file src="src/android/LibraryProject/res/values-sw720dp-land/dimens.xml" target-dir="res/values-sw720dp-land"/>
@@ -202,6 +200,90 @@
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/utils/Utils.java" target-dir="src/com/wacom/toolsconfigurator/utils"/>
 
   <!-- plugman cannot merge - prepare manual merge -->
+  
+    <config-file target="res/values/dimens.xml" parent="/resources">
+      <string name="app_name">WacomInkingToolsConfiguratorForAndroid</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="velocity_configuration_label">Velocity configuration</string>
+    <string name="pressure_configuration_label">Pressure configuration</string>
+    <string name="velocity_function_label">Velocity function</string>
+    <string name="pressure_function_label">Pressure function</string>
+    <string name="minradius">Min radius</string>
+    <string name="maxradius">Max radius</string>
+    <string name="min_alpha">Min alpha</string>
+    <string name="max_alpha">Max alpha</string>
+    <string name="minvalue">Min</string>
+    <string name="maxvalue">Max</string>
+    <string name="minvelocity">Min velocity</string>
+    <string name="maxvelocity">Max velocity</string>
+    <string name="minpressure">Min pressure</string>
+    <string name="maxpressure">Max pressure</string>
+    <string name="texture_switch">Texture</string>
+    <string name="pressure_switch">Pressure</string>
+    <string name="reverse">Reverse</string>
+    <string name="exponential">Exponential</string>
+    <string name="sigmoid">Sigmoid</string>
+    <string name="periodic">Periodic</string>
+    <string name="startradius">Start radius</string>
+    <string name="endradius">End radius</string>
+    <string name="smoothing_radius">Smoothing R.</string>
+    <string name="start_alpha">Start alpha</string>
+    <string name="end_alpha">End alpha</string>
+    <string name="smoothing_alpha">Smoothing A.</string>
+    
+    <string name="texture_title">Texture configuration</string>
+    <string name="texture_fill">Fill source</string>
+    <string name="texture_shape">Shape source</string>
+    <string name="texture_dimensions">128x128px</string>
+    <string name="texture_spacing">Spacing</string>
+    <string name="texture_scattering">Scattering</string>
+    <string name="texture_max_blend">Max blend</string>
+    <string name="texture_rotation">Rotation</string>
+    <string name="texture_rotation_off">Off</string>
+    <string name="texture_rotation_random">Random</string>
+    <string name="texture_rotation_trajectory">Trajectory</string>
+    
+    <string name="exportinfo">The tool name must contain only alphanumeric characters. The tool identifier must be a positive number.</string>
+    <string name="export_dialog_title">Input your tool metadata!</string>
+    <string name="na"></string>
+    <string name="tool_name_hint">Enter a tool name</string>
+    <string name="tool_identifier_hint">Enter a tool identifier</string>
+    <string name="export_dialog_btn_ok">OK</string>
+    <string name="export_dialog_btn_cancel">Cancel</string>
+    <string name="tabVelocityConfig">Velocity config</string>
+    <string name="tabPressureConfig">Pressure config</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_export">Export</string>
+    <string name="export_intent_chooser_title">Select export destination</string>
+	
+		</config-file>
+	
+  <config-file target="res/values/dimens.xml" parent="/resources">
+      <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="label_width">120dp</dimen>
+    <dimen name="row_height">55dp</dimen>
+    <dimen name="infobox_padding_left">20dp</dimen>
+    <dimen name="infobox_padding_right">20dp</dimen>
+    <item name="navbar_space" format="dimension" type="dimen">10dp</item>
+    <item name="spacing" format="dimension" type="dimen">10dp</item>
+    <item name="vspacing" format="dimension" type="dimen">10dp</item>
+    <item name="arrow_btn_width" format="dimension" type="dimen">30dp</item>
+    <item name="btn_group_space" format="dimension" type="dimen">25dp</item>
+    <item name="navbar_right_space" format="dimension" type="dimen">20dp</item>
+    <item name="navbar_top_padding" format="dimension" type="dimen">15dp</item>
+    <item name="navbar_bottom_padding" format="dimension" type="dimen">15dp</item>
+    <item name="btn_width" format="dimension" type="dimen">44dp</item>
+    <item name="btn_height" format="dimension" type="dimen">44dp</item>
+    <item name="navbar_container_width" format="dimension" type="dimen">730dp</item>
+    <item name="navbar_container_height" format="dimension" type="dimen">74dp</item>
+    <item name="toolConfigViewWidth" format="dimension" type="dimen">600dp</item>
+    <item name="navbar_width" format="dimension" type="dimen">76dp</item>
+    <dimen name="export_dialog_export_info_padding">20dp</dimen>
+    <dimen name="export_dialog_width">200dp</dimen>
+	</config-file>
+	
 <config-file target="res/values/arrays.xml" parent="/resources">
     <color name="color1">#8bad21</color>
     <color name="color2">#FFC42169</color>
