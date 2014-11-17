@@ -1,5 +1,5 @@
 var cordova.plugins.willPlugin = {
-    createEvent: function(title, location, notes, startDate, endDate, successCallback, errorCallback) {
+    open: function(successCallback, errorCallback) {
 		 cordova.exec(
 					successCallback, // success callback function
 					errorCallback, // error callback function
