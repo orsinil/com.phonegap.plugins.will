@@ -57,6 +57,34 @@ public class MainActivity extends Activity implements Ink{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		intentManager = new IntentManager();
+		intentManager.addIntentResponseHandler(111,
+				new IntentResponseHandler() {
+					@Override
+					public boolean handleResponse(int resultCode, Intent data) {
+						if (resultCode == Activity.RESULT_OK
+								&& data.getData() != null) {
+							File copiedFile = Utils.copyFile(data.getData(),
+									getFilesDir().getAbsolutePath());
+							// copiedFile
+						}
+						return true;
+					}
+				});
+		
+		intentManager.addIntentResponseHandler(222,
+				new IntentResponseHandler() {
+					@Override
+					public boolean handleResponse(int resultCode, Intent data) {
+						if (resultCode == Activity.RESULT_OK && data.getData() != null) {
+							Utils.copyFile(data.getData(), getFilesDir().getAbsolutePath());
+						}
+						return true;
+					}
+				});
+				
 		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
     	builder.setMessage("Look at this dialog!")
     	       .setCancelable(false)
