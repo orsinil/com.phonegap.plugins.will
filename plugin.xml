@@ -15,7 +15,7 @@
     </engines>    
 
     <js-module src="www/will.js" name="will">
-        <clobbers target="cordova.plugins.will" />
+        <clobbers target="cordova.plugins.willPlugin" />
     </js-module>
 
 <platform name="android">
