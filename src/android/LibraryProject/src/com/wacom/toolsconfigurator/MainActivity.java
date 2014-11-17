@@ -89,11 +89,21 @@ public class MainActivity extends Activity implements Ink{
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
 		
+		 try {
+
 				SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
+		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
+			
+			@Override
+			public void onReadyToStroke(StrokeInkCanvas canvas) {
+
+			}
+		});
 		
-		
-		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    	builder.setMessage(surfaceView)
+		} catch (IOException e) {
+
+				    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setMessage(e.getMessage())
     	       .setCancelable(false)
     	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
     	           public void onClick(DialogInterface dialog, int id) {
@@ -102,6 +112,8 @@ public class MainActivity extends Activity implements Ink{
     	       });
     	AlertDialog alert = builder.create();
     	alert.show();
+		}
+
 
 	}
 
