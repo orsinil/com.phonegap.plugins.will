@@ -1,4 +1,4 @@
-var cordova.plugins.willPlugin = {
+var willPlugin = {
     open: function(successCallback, errorCallback) {
 		 cordova.exec(
 					successCallback, // success callback function
