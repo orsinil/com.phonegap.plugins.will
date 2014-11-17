@@ -15,12 +15,33 @@ public class willPlugin  extends CordovaPlugin 	{
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
+		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
+			    	Intent intent = new Intent(this, MainActivity.class);
+					startActivity(intent);
+		    /*JSONObject arg_object = args.getJSONObject(0);
+		    Intent calIntent = new Intent(Intent.ACTION_EDIT)
+		        .setType("vnd.android.cursor.item/event")
+		        .putExtra("beginTime", arg_object.getLong("startTimeMillis"))
+		        .putExtra("endTime", arg_object.getLong("endTimeMillis"))
+		        .putExtra("title", arg_object.getString("title"))
+		        .putExtra("description", arg_object.getString("description"))
+		        .putExtra("eventLocation", arg_object.getString("eventLocation"));
+		 
+		       this.cordova.getActivity().startActivity(calIntent);
+		       callbackContext.success();*/
+		        //Intent intentOpen = new Intent(WILL_INTENT);
+		        //intentOpen.addCategory(Intent.CATEGORY_DEFAULT);
+		        // avoid calling other phonegap apps
+		        //intentOpen.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
-		    callbackContext.error("test");
+		        //this.cordova.startActivityForResult((CordovaPlugin) this, intentOpen, 0);
+		       return true;
+		    }
+		    callbackContext.error("Invalid action");
 		    return false;
 		} catch(Exception e) {
 		    System.err.println("Exception: " + e.getMessage());
-		    callbackContext.error("test" + e.getMessage());
+		    callbackContext.error(e.getMessage());
 		    return false;
 		} 
 
