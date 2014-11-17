@@ -8,6 +8,8 @@ package com.wacom.toolsconfigurator;
 import java.io.File;
 import java.util.LinkedList;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -55,75 +57,17 @@ public class MainActivity extends Activity implements Ink{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		intentManager = new IntentManager();
-		intentManager.addIntentResponseHandler(111,
-				new IntentResponseHandler() {
-					@Override
-					public boolean handleResponse(int resultCode, Intent data) {
-						if (resultCode == Activity.RESULT_OK
-								&& data.getData() != null) {
-							File copiedFile = Utils.copyFile(data.getData(),
-									getFilesDir().getAbsolutePath());
-							// copiedFile
-						}
-						return true;
-					}
-				});
-		
-		intentManager.addIntentResponseHandler(222,
-				new IntentResponseHandler() {
-					@Override
-					public boolean handleResponse(int resultCode, Intent data) {
-						if (resultCode == Activity.RESULT_OK && data.getData() != null) {
-							Utils.copyFile(data.getData(), getFilesDir().getAbsolutePath());
-						}
-						return true;
-					}
-				});
-		
+		    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    	builder.setMessage("Look at this dialog!")
+    	       .setCancelable(false)
+    	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+    	           public void onClick(DialogInterface dialog, int id) {
+    	                //do things
+    	           }
+    	       });
+    	AlertDialog alert = builder.create();
+    	alert.show();
 
-		if (Logger.LOG_ENABLED)
-			logger.i("activity.onCreate " + this);
-
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_main);
-		
-		SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
-		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
-			
-			@Override
-			public void onReadyToStroke(StrokeInkCanvas canvas) {
-				initializeInk();
-				
-				BitmapFactory.Options opts = new BitmapFactory.Options();
-				opts.inSampleSize = 1;
-				opts.inScaled = false;
-				Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.paper_bg_1, opts);
-
-				inkCanvas.setBackground(Utils.cropAndScaleBitmapAtCenterPt(bitmap, inkCanvas.getWidth(), inkCanvas.getHeight()));
-				inkCanvas.presentToScreen();
-//				inkCanvas.getStrokePaint().setStrokeBrush(canvasModel.getShapeFillStrokeBrush());
-//				inkCanvas.getStrokePaint().setColorRGB(canvasModel.getSelectedColor());
-//				inkCanvas.getStrokePaint().setRoundCapBeginning(true);
-//				inkCanvas.getStrokePaint().setRoundCapEnding(true);
-				
-				controller.activateBrush();
-				
-				inkCanvas.clear();
-				inkCanvas.presentToScreen(canvasMx);
-				bReady = true; 
-			}
-		});
-
-		surfaceView.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				return processTouch(event);
-			}
-		});
 	}
 
 	public StrokeInkCanvas getInkCanvas(){
