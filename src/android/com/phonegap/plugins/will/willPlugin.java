@@ -17,8 +17,8 @@ public class willPlugin  extends CordovaPlugin 	{
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
 			    	Intent intent = new Intent(this,"com.wacom.toolsconfigurator.MAIN");
-					view.getContext().startActivity(intent);
-					
+					//view.getContext().startActivity(intent);
+					this.cordova.startActivityForResult((CordovaPlugin) this, intent, 0);
 					
 					/*callbackContext.error(this.cordova.getActivity().getApplicationContext().getPackageName());*/
 					return false;
