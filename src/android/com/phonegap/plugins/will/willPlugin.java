@@ -23,7 +23,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 				intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
 				this.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
-				retrun true;
+				return true;
 		    }
 		    callbackContext.error("Invalid action");
 		    return false;
