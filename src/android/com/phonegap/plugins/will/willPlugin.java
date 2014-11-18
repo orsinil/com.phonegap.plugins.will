@@ -17,12 +17,19 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
-			    Intent intentScan = new Intent(WILL_INTENT);
+			
+			cordova.getActivity().runOnUiThread(new Runnable() {
+                public void run() {
+                    			    Intent intentScan = new Intent(WILL_INTENT);
 				intentScan.addCategory(Intent.CATEGORY_DEFAULT);
 				// avoid calling other phonegap apps
 				intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
 				this.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
+                    //callbackContext.success(); // Thread-safe.
+                }
+            });
+
 				return true;
 		    }
 		    callbackContext.error("Invalid action");
