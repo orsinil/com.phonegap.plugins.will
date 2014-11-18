@@ -55,7 +55,7 @@
         </config-file>
 		
 		
-<source-file src="src/android/wacommInkLibraryAndroidjar.jar" target-dir="libs"/>
+<source-file src="src/android/wacommInkLibraryAndroidjar.jar" target-dir="bin"/>
 <source-file src="src/android/LibraryProject/assets/defaulttools.json" target-dir="assets"/>
 <source-file src="src/android/LibraryProject/assets/essential_fill_11.png" target-dir="assets"/>
 <source-file src="src/android/LibraryProject/assets/essential_fill_15.png" target-dir="assets"/>
