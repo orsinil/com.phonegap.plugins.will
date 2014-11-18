@@ -18,18 +18,30 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
 			
+			
 			cordova.getActivity().runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
 						Context context = cordova.getActivity()
 								.getApplicationContext();
-						Intent intent = new Intent(context,WILL_INTENT);
+						Intent intent = new Intent(context,com.wacom.toolsconfigurator.MainActivity);
 						cordova.getActivity().startActivity(intent);
 					}
 
             });
+			
+			
+			    //Intent intentScan = new Intent(WILL_INTENT);
+				//intentScan.addCategory(Intent.CATEGORY_DEFAULT);
+				// avoid calling other phonegap apps
+				//intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
+				th//is.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
 				return true;
+				
+				
+				
+				
 		    }
 		    callbackContext.error("Invalid action");
 		    return false;
