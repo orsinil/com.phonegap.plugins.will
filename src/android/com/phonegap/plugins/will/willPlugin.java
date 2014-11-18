@@ -7,6 +7,7 @@ import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
+import com.wacom.toolsconfigurator.MainActivity;
 
 public class willPlugin  extends CordovaPlugin 	{
 public static final int REQUEST_CODE = 0x0ba7c0df;
@@ -24,7 +25,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 					public void run() {
 						Context context = cordova.getActivity()
 								.getApplicationContext();
-						Intent intent = new Intent(context,com.wacom.toolsconfigurator.MainActivity);
+						Intent intent = new Intent(context,MainActivity.class);
 						cordova.getActivity().startActivity(intent);
 					}
 
