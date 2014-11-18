@@ -3,7 +3,7 @@ package com.wacom.toolsconfigurator;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
-
+import com.pinaround.R;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;

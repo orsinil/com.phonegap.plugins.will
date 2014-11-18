@@ -1,7 +1,7 @@
 package com.wacom.toolsconfigurator;
 
 import android.view.View;
-
+import com.pinaround.R;
 import com.wacom.ink.path.PathBuilder.InputDynamicsType;
 import com.wacom.toolsconfigurator.ui.SeekBarWithTextField;
 

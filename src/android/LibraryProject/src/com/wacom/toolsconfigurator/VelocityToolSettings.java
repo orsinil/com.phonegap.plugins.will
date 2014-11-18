@@ -1,5 +1,5 @@
 package com.wacom.toolsconfigurator;
-
+import com.pinaround.R;
 import android.view.View;
 
 import com.wacom.ink.path.PathBuilder.InputDynamicsType;
