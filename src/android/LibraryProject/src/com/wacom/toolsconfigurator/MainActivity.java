@@ -88,30 +88,46 @@ public class MainActivity extends Activity implements Ink{
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
 		
-		 try {
+
 
 				SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
 		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
 			
 			@Override
 			public void onReadyToStroke(StrokeInkCanvas canvas) {
+				initializeInk();
+				
+				BitmapFactory.Options opts = new BitmapFactory.Options();
+				opts.inSampleSize = 1;
+				opts.inScaled = false;
+				Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.paper_bg_1, opts);
 
+				inkCanvas.setBackground(Utils.cropAndScaleBitmapAtCenterPt(bitmap, inkCanvas.getWidth(), inkCanvas.getHeight()));
+				inkCanvas.presentToScreen();
+//				inkCanvas.getStrokePaint().setStrokeBrush(canvasModel.getShapeFillStrokeBrush());
+//				inkCanvas.getStrokePaint().setColorRGB(canvasModel.getSelectedColor());
+//				inkCanvas.getStrokePaint().setRoundCapBeginning(true);
+//				inkCanvas.getStrokePaint().setRoundCapEnding(true);
+				
+				controller.activateBrush();
+				
+				inkCanvas.clear();
+				inkCanvas.presentToScreen(canvasMx);
+				bReady = true; 
+			}
+		});
+
+		surfaceView.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				return processTouch(event);
 			}
 		});
 		
-		} catch (Exception e) {
 
-				    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    	builder.setMessage(e.getMessage())
-    	       .setCancelable(false)
-    	       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-    	           public void onClick(DialogInterface dialog, int id) {
-    	                //do things
-    	           }
-    	       });
-    	AlertDialog alert = builder.create();
-    	alert.show();
-		}
+
+
+
 
 
 	}
