@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import android.app.Activity;
 import android.content.Intent;
-
+import android.content.Context;
 
 public class willPlugin  extends CordovaPlugin 	{
 public static final int REQUEST_CODE = 0x0ba7c0df;
