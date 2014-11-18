@@ -36,7 +36,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 				// avoid calling other phonegap apps
 				//intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
 
-				th//is.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
+				//this.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
 				return true;
 				
 				
