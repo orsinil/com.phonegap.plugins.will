@@ -1,6 +1,6 @@
 package com.wacom.toolsconfigurator;
 
-import <app-package>.R;
+import com.pinaround.R;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;

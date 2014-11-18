@@ -4,7 +4,7 @@ package com.wacom.toolsconfigurator;
  * Created by Zahari Pastarmadjiev.
  * Copyright (c) 2013 Wacom. All rights reserved.
  */
-import <app-package>.R;
+import com.pinaround.R;
 import java.io.File;
 import java.util.LinkedList;
 import android.app.AlertDialog;
