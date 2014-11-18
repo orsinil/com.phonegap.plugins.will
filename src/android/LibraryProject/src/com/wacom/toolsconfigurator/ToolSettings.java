@@ -1,5 +1,5 @@
 package com.wacom.toolsconfigurator;
-
+import com.pinaround.R;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
