@@ -1,6 +1,6 @@
 package com.wacom.toolsconfigurator.ui;
 
-import com.wacom.toolsconfigurator.R;
+import org.apache.cordova.R;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
