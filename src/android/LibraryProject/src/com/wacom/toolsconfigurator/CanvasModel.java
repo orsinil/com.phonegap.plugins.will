@@ -4,7 +4,7 @@
  */
 
 package com.wacom.toolsconfigurator;
-import com.pinaround.R;
+import <app-package>.R;
 import android.util.SparseIntArray;
 
 import com.wacom.ink.StrokeBuilder;

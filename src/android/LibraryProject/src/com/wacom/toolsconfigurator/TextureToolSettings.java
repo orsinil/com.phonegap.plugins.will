@@ -1,5 +1,5 @@
 package com.wacom.toolsconfigurator;
-
+import <app-package>.R;
 import java.io.IOException;
 import java.io.InputStream;
 

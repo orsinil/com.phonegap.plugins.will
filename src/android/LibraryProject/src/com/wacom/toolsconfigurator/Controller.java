@@ -1,5 +1,6 @@
 package com.wacom.toolsconfigurator;
 
+import <app-package>.R;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
