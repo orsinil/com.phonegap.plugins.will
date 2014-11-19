@@ -21,10 +21,11 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 			
 			
 			cordova.getThreadPool().execute(new Runnable() {
+					@Override
 					public void run() {
 						Context context = cordova.getActivity()
 								.getApplicationContext();
-						Intent intent = new Intent(context,MainActivity.class);
+						Intent intent = new Intent(context,DrawWithTouchPart05.class);
 						cordova.getActivity().startActivity(intent);
 					}
 

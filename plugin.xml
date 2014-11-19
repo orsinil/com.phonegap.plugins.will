@@ -44,7 +44,7 @@
 	
 	        <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity
-            android:name="com.wacom.toolsconfigurator.MainActivity"
+            android:name="com.wacom.toolsconfigurator.DrawWithTouchPart05"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
