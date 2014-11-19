@@ -1,4 +1,4 @@
-package com.wacom.ink.samples.drawwithtouch;
+package com.wacom.toolsconfigurator;
 
 import java.nio.FloatBuffer;
 
