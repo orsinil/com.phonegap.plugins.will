@@ -4,28 +4,39 @@ package com.wacom.toolsconfigurator;
  * Created by Zahari Pastarmadjiev.
  * Copyright (c) 2013 Wacom. All rights reserved.
  */
-import com.pinaround.R;
+
 import java.io.File;
 import java.util.LinkedList;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import com.pinaround.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.wacom.ink.rendering.RenderingContext;
 import com.wacom.ink.StrokeBuilder;
 import com.wacom.ink.StrokeInkCanvas;
+import com.wacom.ink.path.SpeedPathBuilder;
 import com.wacom.ink.path.PathBuilder.InputDynamicsType;
+import com.wacom.ink.path.PathBuilder.PropertyFunction;
 import com.wacom.ink.path.PathBuilder.PropertyName;
+import com.wacom.ink.rasterization.InkCanvas;
+import com.wacom.ink.rasterization.Layer;
+import com.wacom.ink.rasterization.SolidColorBrush;
+import com.wacom.ink.rasterization.StrokeJoin;
+import com.wacom.ink.rasterization.StrokePaint;
+import com.wacom.ink.rendering.RenderingContext;
+import com.wacom.ink.smooth.MultiChannelSmoothener;
 import com.wacom.ink.tools.DynamicsConfig;
 import com.wacom.ink.utils.IntentManager;
 import com.wacom.ink.utils.IntentResponseHandler;
@@ -45,7 +56,7 @@ public class MainActivity extends Activity implements Ink{
 	public static boolean USE_HISTORICAL_EVENTS = false;
 	
 	private Controller controller;
-
+	private RenderingContext renderingContext;
 	private IntentManager intentManager;
 	private StrokeInkCanvas inkCanvas;
 	private Matrix canvasMx = new Matrix();
@@ -83,16 +94,40 @@ public class MainActivity extends Activity implements Ink{
 						return true;
 					}
 				});
-				
-				getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+		
+
+		if (Logger.LOG_ENABLED)
+			logger.i("activity.onCreate " + this);
+
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.activity_main);
 		
+		SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
+		surfaceView.getHolder().addCallback(new SurfaceHolder.Callback(){
 
-
-				SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
-		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
 			
+			@Override
+			public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+				renderingContext = new RenderingContext(new RenderingContext.EGLConfigSpecification());
+				renderingContext.initContext();
+
+				renderingContext.createEGLSurface(holder);
+				renderingContext.bindEGLContext();
+			}
+
+			@Override
+			public void surfaceCreated(SurfaceHolder holder) {
+
+			}
+
+			@Override
+			public void surfaceDestroyed(SurfaceHolder holder) {
+
+			}
+		});
+		
+		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
 			@Override
 			public void onReadyToStroke(StrokeInkCanvas canvas) {
 				initializeInk();
@@ -123,13 +158,6 @@ public class MainActivity extends Activity implements Ink{
 				return processTouch(event);
 			}
 		});
-		
-
-
-
-
-
-
 	}
 
 	public StrokeInkCanvas getInkCanvas(){
