@@ -24,6 +24,7 @@
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Controller.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ExportDialogFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Ink.java" target-dir="src/com/wacom/toolsconfigurator"/>
+<source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/DrawWithTouchPart05.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/MainActivity.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/NavigationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/PressureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
