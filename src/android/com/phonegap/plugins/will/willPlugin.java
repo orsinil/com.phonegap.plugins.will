@@ -20,8 +20,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
 			
 			
-			cordova.getActivity().runOnUiThread(new Runnable() {
-					@Override
+			cordova.getThreadPool().execute(new Runnable() {
 					public void run() {
 						Context context = cordova.getActivity()
 								.getApplicationContext();
