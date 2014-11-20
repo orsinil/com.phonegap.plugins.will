@@ -31,16 +31,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
             });
 		    	loaded=true;
 			}
-			
 
-			
-			
-			    //Intent intentScan = new Intent(WILL_INTENT);
-				//intentScan.addCategory(Intent.CATEGORY_DEFAULT);
-				// avoid calling other phonegap apps
-				//intentScan.setPackage(this.cordova.getActivity().getApplicationContext().getPackageName());
-
-				//this.cordova.startActivityForResult((CordovaPlugin) this, intentScan, REQUEST_CODE);
 				return true;
 				
 				
