@@ -13,23 +13,26 @@ public class willPlugin  extends CordovaPlugin 	{
 public static final int REQUEST_CODE = 0x0ba7c0df;
 	public static final String ACTION_ADD_WILL_ENTRY = "addWillEntry"; 
 	private static final String WILL_INTENT = "com.wacom.toolsconfigurator.MAIN";
-	
+	public boolean loaded=false;
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
-			
-			
-			cordova.getThreadPool().execute(new Runnable() {
+			if (!loaded) {
+				cordova.getActivity().runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
 						Context context = cordova.getActivity()
 								.getApplicationContext();
-						Intent intent = new Intent(context,DrawWithTouchPart05.class);
+						Intent intent = new Intent(context,MainActivity.class);
 						cordova.getActivity().startActivity(intent);
 					}
 
             });
+		    	loaded=true;
+			}
+			
+
 			
 			
 			    //Intent intentScan = new Intent(WILL_INTENT);
@@ -55,4 +58,8 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 	}
 
 }
+
+
+
+
 
