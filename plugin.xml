@@ -24,6 +24,7 @@
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Controller.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/ExportDialogFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/Ink.java" target-dir="src/com/wacom/toolsconfigurator"/>
+
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/MainActivity.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/NavigationFragment.java" target-dir="src/com/wacom/toolsconfigurator"/>
 <source-file src="src/android/LibraryProject/src/com/wacom/toolsconfigurator/PressureToolSettings.java" target-dir="src/com/wacom/toolsconfigurator"/>
@@ -43,7 +44,6 @@
     </config-file>
 	
 	        <config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<application android:hardwareAccelerated="false">
             <activity
             android:name="com.wacom.toolsconfigurator.MainActivity"
             android:label="@string/app_name"
@@ -53,8 +53,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-		<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="18" />
-		</application>
         </config-file>
 		
 		
