@@ -1,0 +1,71 @@
+ <menu xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/mnu_top">    
+    <item
+        android:title="Colors"
+        android:id="@+id/btn_color"
+        android:showAsAction="always"
+        android:icon="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" >
+         <menu>
+			<item
+			        android:title="Green"
+			        android:id="@+id/btn_color1"
+			        android:showAsAction="always"
+			        android:icon="@drawable/drawable_btn_color"
+			        android:tag="@string/btn_tag_color" />  
+			<item
+				android:title="Pink"
+				android:id="@+id/btn_color2"
+				android:showAsAction="always"
+				android:icon="@drawable/drawable_btn_color"
+				android:tag="@string/btn_tag_color" />
+    <item
+        android:title="Blue"
+        android:id="@+id/btn_color3"
+		android:showAsAction="always"
+        android:icon="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <item
+        android:title="Yellow"
+        android:id="@+id/btn_color4"
+		android:showAsAction="always"
+        android:icon="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+
+    <item
+        android:title="Black"
+        android:id="@+id/btn_color5"
+		android:showAsAction="always"
+        android:icon="@drawable/drawable_btn_color"
+        android:tag="@string/btn_tag_color" />
+        </menu>
+        
+        </item>
+   <item
+        android:title="Pen"
+        android:id="@+id/btn_pen"
+        android:showAsAction="always"
+        android:icon="@drawable/btn_pen1"
+        android:tag="@string/btn_tag_color" />
+      <item
+        android:title="Eraser"
+        android:id="@+id/btn_eraser"
+        android:showAsAction="always"
+        android:icon="@drawable/btn_eraser"
+        android:tag="@string/btn_tag_color" />
+            <item
+        android:title="utilizza"
+        android:id="@+id/btn_export"
+        android:showAsAction="always"
+        android:icon="@drawable/btn_use"
+        android:tag="@string/btn_tag_color" />
+            
+       <item
+        android:title="close"
+        android:id="@+id/btn_close"
+        android:showAsAction="always"
+        android:icon="@drawable/btn_close"
+        android:tag="@string/btn_tag_color" />
+         
+ </menu>

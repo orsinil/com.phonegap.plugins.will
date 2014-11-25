@@ -159,6 +159,7 @@
 <source-file src="src/android/LibraryProject/res/layout/tool_settings.xml" target-dir="res/layout"/>
 <source-file src="src/android/LibraryProject/res/layout-xlarge-land-v19/tool_settings.xml" target-dir="res/layout-xlarge-land-v19"/>
 <source-file src="src/android/LibraryProject/res/menu/main.xml" target-dir="res/menu"/>
+<source-file src="src/android/LibraryProject/res/menu/mnu_colors.xml" target-dir="res/menu"/>
 
 <source-file src="src/android/LibraryProject/res/values/attrs.xml" target-dir="res/values"/>
 
