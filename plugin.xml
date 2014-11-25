@@ -86,6 +86,9 @@
 <source-file src="src/android/LibraryProject/res/drawable/drawable_btn_paper5.xml" target-dir="res/drawable"/>
 <source-file src="src/android/LibraryProject/res/drawable/drawable_btn_rightarrow.xml" target-dir="res/drawable"/>
 <source-file src="src/android/LibraryProject/res/drawable-hdpi/ic_launcher.png" target-dir="res/drawable-hdpi"/>
+
+
+<source-file src="src/android/LibraryProject/res/drawable-mdpi/btn_use.png" target-dir="res/drawable-mdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-mdpi/bgn_color.png" target-dir="res/drawable-mdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-mdpi/bgn_color_select.png" target-dir="res/drawable-mdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-mdpi/btn_arrow_left.png" target-dir="res/drawable-mdpi"/>
@@ -120,6 +123,7 @@
 <source-file src="src/android/LibraryProject/res/drawable-nodpi/paper_bg_3.jpg" target-dir="res/drawable-nodpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-nodpi/paper_bg_4.jpg" target-dir="res/drawable-nodpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-nodpi/paper_bg_5.jpg" target-dir="res/drawable-nodpi"/>
+<source-file src="src/android/LibraryProject/res/drawable-xhdpi/btn_use.png" target-dir="res/drawable-xhdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-xhdpi/bgn_color.png" target-dir="res/drawable-xhdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-xhdpi/bgn_color_select.png" target-dir="res/drawable-xhdpi"/>
 <source-file src="src/android/LibraryProject/res/drawable-xhdpi/btn_arrow_left.png" target-dir="res/drawable-xhdpi"/>

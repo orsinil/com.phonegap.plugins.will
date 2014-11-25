@@ -5,15 +5,24 @@ package com.wacom.toolsconfigurator;
  * Copyright (c) 2013 Wacom. All rights reserved.
  */
 
+
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
-import com.pinaround.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
@@ -42,21 +51,55 @@ public class MainActivity extends Activity implements Ink{
 	private CanvasModel canvasModel;
 	
 	public static boolean USE_HISTORICAL_EVENTS = false;
-	
+	public Menu mainMenu;
 	private Controller controller;
-
+    private int CAMERA_CODE =123;
 	private IntentManager intentManager;
 	private StrokeInkCanvas inkCanvas;
 	private Matrix canvasMx = new Matrix();
 	private boolean bReady;
 	private TouchUtils.TouchPointID prevPoint = new TouchUtils.TouchPointID();
-	private LinkedList<StrokeBuilder.CompositePoint> historicalEvents = new LinkedList<StrokeBuilder.CompositePoint>();;
+	private LinkedList<StrokeBuilder.CompositePoint> historicalEvents = new LinkedList<StrokeBuilder.CompositePoint>();
 	
+	public void opencamera() {
+		Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+		startActivityForResult(intent, CAMERA_CODE);
+
+		
+		
+	}
+	
+
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.mnu_colors, menu);
+        mainMenu=menu;
+        
+        controller.changheColor(R.id.btn_color1, R.id.btn_color1);
+        controller.changheColor(R.id.btn_color2, R.id.btn_color2);
+        controller.changheColor(R.id.btn_color3, R.id.btn_color3);
+        controller.changheColor(R.id.btn_color4, R.id.btn_color4);
+        controller.changheColor(R.id.btn_color5, R.id.btn_color5);
+        controller.changheColor(R.id.btn_color1, R.id.btn_color);
+        controller.activateBrush();
+        return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        controller.onMenuClicked(item);
+        return true;
+    }
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_main);
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
 		intentManager = new IntentManager();
 		intentManager.addIntentResponseHandler(111,
 				new IntentResponseHandler() {
@@ -89,7 +132,7 @@ public class MainActivity extends Activity implements Ink{
 
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.activity_main);
+		
 		
 		SurfaceView surfaceView = (SurfaceView) findViewById(R.id.inkingCanvas);
 		inkCanvas = new StrokeInkCanvas(surfaceView, new StrokeInkCanvas.DefaultCallback() {
@@ -101,7 +144,7 @@ public class MainActivity extends Activity implements Ink{
 				BitmapFactory.Options opts = new BitmapFactory.Options();
 				opts.inSampleSize = 1;
 				opts.inScaled = false;
-				Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.paper_bg_1, opts);
+				Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.paper_bg_2, opts);
 
 				inkCanvas.setBackground(Utils.cropAndScaleBitmapAtCenterPt(bitmap, inkCanvas.getWidth(), inkCanvas.getHeight()));
 				inkCanvas.presentToScreen();
@@ -110,7 +153,7 @@ public class MainActivity extends Activity implements Ink{
 //				inkCanvas.getStrokePaint().setRoundCapBeginning(true);
 //				inkCanvas.getStrokePaint().setRoundCapEnding(true);
 				
-				controller.activateBrush();
+				//controller.activateBrush();
 				
 				inkCanvas.clear();
 				inkCanvas.presentToScreen(canvasMx);
@@ -125,6 +168,8 @@ public class MainActivity extends Activity implements Ink{
 			}
 		});
 	}
+	
+	
 
 	public StrokeInkCanvas getInkCanvas(){
 		return inkCanvas;
@@ -317,8 +362,83 @@ public class MainActivity extends Activity implements Ink{
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		intentManager.processIntentResponse(requestCode, resultCode, data);
-
 		super.onActivityResult(requestCode, resultCode, data);
+		 if (requestCode == CAMERA_CODE) {
+		        // Make sure the request was successful
+		        if (resultCode == RESULT_OK) {
+		           
+		        	ParcelFileDescriptor parcelFD = null;
+		            try {
+		                parcelFD = getContentResolver().openFileDescriptor(data.getData(), "r");
+		                FileDescriptor imageSource = parcelFD.getFileDescriptor();
+
+		                // Decode image size
+		                BitmapFactory.Options o = new BitmapFactory.Options();
+		                o.inJustDecodeBounds = true;
+		                BitmapFactory.decodeFileDescriptor(imageSource, null, o);
+
+		                // the new size we want to scale to
+		                final int REQUIRED_SIZE = 1024;
+
+		                // Find the correct scale value. It should be the power of 2.
+		                int width_tmp = o.outWidth, height_tmp = o.outHeight;
+		                int scale = 1;
+		                while (true) {
+		                    if (width_tmp < REQUIRED_SIZE && height_tmp < REQUIRED_SIZE) {
+		                        break;
+		                    }
+		                    width_tmp /= 2;
+		                    height_tmp /= 2;
+		                    scale *= 2;
+		                }
+
+		                // decode with inSampleSize
+		                BitmapFactory.Options o2 = new BitmapFactory.Options();
+		    			o2.inSampleSize = 1;
+		    			o2.inScaled = false;
+		    			
+		                /*Bitmap bitmap = BitmapFactory.decodeFileDescriptor(imageSource, null, o2);
+
+						inkCanvas.setBackground(Utils.cropAndScaleBitmapAtCenterPt(bitmap, inkCanvas.getWidth(), inkCanvas.getHeight()));
+
+						inkCanvas.presentToScreen();*/
+		    			
+		    			BitmapFactory.Options opts = new BitmapFactory.Options();
+						opts.inSampleSize = 1;
+						opts.inScaled = false;
+						Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.paper_bg_2, opts);
+						getInkCanvas().setBackground(Utils.cropAndScaleBitmapAtCenterPt(bitmap, getInkCanvas().getWidth(), getInkCanvas().getHeight()));
+						getInkCanvas().updateScene();
+						getInkCanvas().presentToScreen();
+
+		            } catch (FileNotFoundException e) {
+
+		                // handle errors
+		            } catch (IOException e) {
+		                // handle errors
+		            } finally {
+		                if (parcelFD != null)
+		                    try {
+		                        parcelFD.close();
+		                    } catch (IOException e) {
+		                        // ignored
+		                    }
+		            }
+
+		        	
+		        	/*Uri selectedImageUri = data.getData();
+		            
+		        	BitmapFactory.Options opts = new BitmapFactory.Options();
+					opts.inSampleSize = 1;
+					opts.inScaled = false;
+					Bitmap bitmap = BitmapFactory.decodeFile(selectedImageUri.getPath(), opts);
+
+;*/
+					
+		        	
+		        }
+		    }
+
 	}
 	
 	public void initializeInk(){
@@ -342,9 +462,9 @@ public class MainActivity extends Activity implements Ink{
 		controller.onBtnBackgroundClicked(view);
 	}
 	
-	public void onBtnColorClicked(View view) {
+	/*public void onBtnColorClicked(View view) {
 		controller.onBtnColorClicked(view);
-	}
+	}*/
 	
 	public void updateStrokePaint(InputDynamicsType type){
 		DynamicsConfig dynConf = canvasModel.getStrokeBuilder().getDynamics();
@@ -363,7 +483,8 @@ public class MainActivity extends Activity implements Ink{
 		if (Logger.LOG_ENABLED) logger.i("selectTool / updateStrokePaint: " + inkCanvas.getStrokePaint().toString());
 	}
 	
-	public void onBtnToolClicked(View v) {
+	
+	/*public void onBtnToolClicked(View v) {
 		controller.onBtnToolClicked(v);
-	}
+	}*/
 }

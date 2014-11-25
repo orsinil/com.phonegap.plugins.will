@@ -9,11 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
     
-    <fragment
-        android:id="@+id/f1"
-        android:name="com.wacom.toolsconfigurator.NavigationFragment"
-        android:layout_width="@dimen/navbar_width"
-        android:layout_height="fill_parent"/>
+
 
 
 
