@@ -11,7 +11,7 @@ import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
-
+import com.pinaround.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
