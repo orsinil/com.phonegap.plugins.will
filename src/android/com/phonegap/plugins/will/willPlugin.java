@@ -22,11 +22,10 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 				cordova.getActivity().runOnUiThread(new Runnable() {
 					@Override
 					public void run() {
-						Context context = cordova.getActivity()
-								.getApplicationContext();
+						Context context = cordova.getActivity().getApplicationContext();
 						Intent intent = new Intent(context,MainActivity.class);
-						 cordova.startActivityForResult((CordovaPlugin) this,intent,REQUEST_CODE);
-						/*cordova.getActivity().startActivity(intent);*/
+						this.cordova.startActivityForResult((CordovaPlugin) this, intent, REQUEST_CODE);
+						//cordova.getActivity().startActivity(intent);
 					}
 
             });
@@ -34,10 +33,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 			}
 
 				return true;
-				
-				
-				
-				
+		
 		    }
 		    callbackContext.error("Invalid action");
 		    return false;
@@ -47,9 +43,9 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 		    return false;
 		} 
 
+	}
 	
-	
-	 @Override
+	    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
@@ -80,6 +76,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
             }
         }
     }
+
 
 }
 
