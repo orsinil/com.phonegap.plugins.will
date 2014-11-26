@@ -24,7 +24,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 					public void run() {
 						Context context = cordova.getActivity().getApplicationContext();
 						Intent intent = new Intent(context,MainActivity.class);
-						this.cordova.startActivityForResult((CordovaPlugin) this, intent, REQUEST_CODE);
+						cordova.startActivityForResult((CordovaPlugin) cordova, intent, REQUEST_CODE);
 						//cordova.getActivity().startActivity(intent);
 					}
 
