@@ -174,7 +174,7 @@
   <!-- plugman cannot merge - prepare manual merge -->
    <config-file target="res/values/styles.xml" parent="/resources">
        <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light">
-
+	</style>
   <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">#c0c0c0</item>
     </style>
