@@ -17,8 +17,10 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 	public boolean loaded=false;
 	private static final String CANCELLED = "cancelled";
 	private CallbackContext callbackContext;
+	private CordovaPlugin obj;
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	obj = (CordovaPlugin) this
 	this.callbackContext = callbackContext;
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
@@ -28,7 +30,7 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 					public void run() {
 						Context context = cordova.getActivity().getApplicationContext();
 						Intent intent = new Intent(context,MainActivity.class);
-						cordova.startActivityForResult((CordovaPlugin) cordova, intent, REQUEST_CODE);
+						cordova.startActivityForResult(obj, intent, REQUEST_CODE);
 						//cordova.getActivity().startActivity(intent);
 					}
 
