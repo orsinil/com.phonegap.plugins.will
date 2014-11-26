@@ -172,8 +172,24 @@
 
 
   <!-- plugman cannot merge - prepare manual merge -->
-  
-    <config-file target="res/values/dimens.xml" parent="/resources">
+   <config-file target="res/values/styles.xml" parent="/resources">
+       <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light">
+
+  <style name="MyActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#c0c0c0</item>
+    </style>
+    
+
+    <style name="AppTheme" parent="AppBaseTheme">
+
+    </style>
+
+    <style name="CustomButtonStyle" parent="@android:attr/buttonStyleSmall">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/custom_button_text_color</item>
+    </style>
+   </config-file>
+    <config-file target="res/values/strings.xml" parent="/resources">
       <string name="app_name">WacomInkingToolsConfiguratorForAndroid</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

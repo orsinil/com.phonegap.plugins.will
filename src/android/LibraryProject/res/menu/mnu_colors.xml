@@ -1,5 +1,5 @@
  <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      android:id="@+id/mnu_top">    
+      android:id="@+id/mnu_top" >    
     <item
         android:title="Colors"
         android:id="@+id/btn_color"
@@ -61,11 +61,5 @@
         android:icon="@drawable/btn_use"
         android:tag="@string/btn_tag_color" />
             
-       <item
-        android:title="close"
-        android:id="@+id/btn_close"
-        android:showAsAction="always"
-        android:icon="@drawable/btn_close"
-        android:tag="@string/btn_tag_color" />
          
  </menu>

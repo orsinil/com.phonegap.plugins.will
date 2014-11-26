@@ -48,7 +48,7 @@ public class Controller{
 	private SparseIntArray colorViewsMap;
 	private SparseIntArray paperViewsMap;
 	private int unselectColor=0xff888888;
-	private int selectColor=0xffffffff;
+	private int selectColor=0xff000000;
 	
 	public Controller(MainActivity activity, CanvasModel canvasModel){
 		this.activity = activity;
@@ -156,6 +156,9 @@ public class Controller{
 	public void onMenuClicked(MenuItem item) {
 		int id = item.getItemId();
 		 switch (id) {
+		 case android.R.id.home:
+			 activity.finish();
+			 break;
          case R.id.btn_color1:
         	 changheColor(id,R.id.btn_color);
         	 activateBrush();
@@ -185,8 +188,6 @@ public class Controller{
          case R.id.btn_export:
         	saveasbitmap();
         	 break;
-         case R.id.btn_close:
-        	 activity.finish();
          default:
             
      }
@@ -225,7 +226,7 @@ public class Controller{
 		PackageManager m = activity.getPackageManager();
 		String s = activity.getPackageName();
 		PackageInfo p = m.getPackageInfo(s, 0);
-		s = p.applicationInfo.dataDir + "/files/scatch.jpg";
+		s = p.applicationInfo.dataDir + "/images/scatch.jpg";
 
 	        FileOutputStream fos = new FileOutputStream(s);
 	        bitmap.compress(Bitmap.CompressFormat.JPEG, 95, fos);
@@ -237,7 +238,7 @@ public class Controller{
 		activity.setResult(0x0ba7c0df, returnIntent);
 		activity.finish();
 	    } catch (Exception e) {
-	        logger.d(e.message);
+	        // handle
 	    }
 
 

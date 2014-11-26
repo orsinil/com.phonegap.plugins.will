@@ -12,14 +12,18 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 import com.pinaround.R;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -78,12 +82,19 @@ public class MainActivity extends Activity implements Ink{
         menuInflater.inflate(R.menu.mnu_colors, menu);
         mainMenu=menu;
         
+        mainMenu.findItem(R.id.btn_eraser).getIcon().setColorFilter(0xff000000, PorterDuff.Mode.MULTIPLY);
+        mainMenu.findItem(R.id.btn_pen).getIcon().setColorFilter(0xff000000, PorterDuff.Mode.MULTIPLY);
+        mainMenu.findItem(R.id.btn_export).getIcon().setColorFilter(0xff000000, PorterDuff.Mode.MULTIPLY);
+        
         controller.changheColor(R.id.btn_color1, R.id.btn_color1);
         controller.changheColor(R.id.btn_color2, R.id.btn_color2);
         controller.changheColor(R.id.btn_color3, R.id.btn_color3);
         controller.changheColor(R.id.btn_color4, R.id.btn_color4);
         controller.changheColor(R.id.btn_color5, R.id.btn_color5);
         controller.changheColor(R.id.btn_color1, R.id.btn_color);
+        
+
+        
         controller.activateBrush();
         return true;
     }
@@ -101,6 +112,14 @@ public class MainActivity extends Activity implements Ink{
 		setContentView(R.layout.activity_main);
 		//requestWindowFeature(Window.FEATURE_NO_TITLE);
 		intentManager = new IntentManager();
+		
+		ActionBar actionBar = getActionBar();
+		actionBar.setBackgroundDrawable(new ColorDrawable(0xfff0f0f0));
+		
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setTitle(Html.fromHtml("<font color='#000000'>Back</font>"));
+
 		intentManager.addIntentResponseHandler(111,
 				new IntentResponseHandler() {
 					@Override
