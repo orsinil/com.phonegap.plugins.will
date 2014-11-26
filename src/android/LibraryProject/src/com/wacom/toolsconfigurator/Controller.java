@@ -5,8 +5,12 @@ import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
+
 import com.pinaround.R;
+
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -229,8 +233,8 @@ public class Controller{
 	        fos.close();
 			
 		Intent returnIntent = new Intent();
-		activity.returnIntent.putExtra("FILE", s);
-		activity.setResult(code, returnIntent);
+		returnIntent.putExtra("FILE", s);
+		activity.setResult(0x0ba7c0df, returnIntent);
 		activity.finish();
 	    } catch (Exception e) {
 	        // handle
