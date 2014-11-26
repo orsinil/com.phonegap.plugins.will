@@ -182,7 +182,7 @@ public class Controller{
         	saveasbitmap();
         	 break;
          case R.id.btn_close:
-        	 finish();
+        	 activity.finish();
          default:
             
      }
