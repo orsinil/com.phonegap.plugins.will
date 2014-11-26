@@ -25,7 +25,8 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 						Context context = cordova.getActivity()
 								.getApplicationContext();
 						Intent intent = new Intent(context,MainActivity.class);
-						cordova.getActivity().startActivity(intent);
+						 cordova.startActivityForResult((CordovaPlugin) this,intent,REQUEST_CODE);
+						/*cordova.getActivity().startActivity(intent);*/
 					}
 
             });
@@ -46,7 +47,39 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 		    return false;
 		} 
 
-	}
+	
+	
+	 @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                JSONObject obj = new JSONObject();
+                try {
+                    obj.put(TEXT, intent.getStringExtra("SCAN_RESULT"));
+                    obj.put(FORMAT, intent.getStringExtra("SCAN_RESULT_FORMAT"));
+                    obj.put(CANCELLED, false);
+                } catch (JSONException e) {
+                    Log.d(LOG_TAG, "This should never happen");
+                }
+                //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
+                this.callbackContext.success(obj);
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                JSONObject obj = new JSONObject();
+                try {
+                    obj.put(TEXT, "");
+                    obj.put(FORMAT, "");
+                    obj.put(CANCELLED, true);
+                } catch (JSONException e) {
+                    Log.d(LOG_TAG, "This should never happen");
+                }
+                //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
+                this.callbackContext.success(obj);
+            } else {
+                //this.error(new PluginResult(PluginResult.Status.ERROR), this.callback);
+                this.callbackContext.error("Unexpected error");
+            }
+        }
+    }
 
 }
 
