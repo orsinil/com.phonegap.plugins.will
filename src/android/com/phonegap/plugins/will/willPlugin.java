@@ -59,20 +59,20 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
                     //Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
-                cordova.callbackContext.success(obj);
+                callbackContext.success(obj);
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 JSONObject obj = new JSONObject();
                 try {
-                    obj.put(TEXT, "");
+                    obj.put(FILE, "");
                     obj.put(CANCELLED, true);
                 } catch (JSONException e) {
                     //Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
-                cordova.callbackContext.success(obj);
+                callbackContext.success(obj);
             } else {
                 //this.error(new PluginResult(PluginResult.Status.ERROR), this.callback);
-                cordova.callbackContext.error("Unexpected error");
+                callbackContext.error("Unexpected error");
             }
         }
     }
