@@ -16,8 +16,10 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
 	private static final String FILE = "file";
 	public boolean loaded=false;
 	private static final String CANCELLED = "cancelled";
+	private CallbackContext callbackContext;
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	this.callbackContext = callbackContext;
 		try {
 		    if (ACTION_ADD_WILL_ENTRY.equals(action)) { 
 			if (!loaded) {
