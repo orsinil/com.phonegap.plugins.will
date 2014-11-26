@@ -225,7 +225,7 @@ public class Controller{
 		PackageManager m = activity.getPackageManager();
 		String s = activity.getPackageName();
 		PackageInfo p = m.getPackageInfo(s, 0);
-		s = p.applicationInfo.dataDir + "/images/scatch.jpg";
+		s = p.applicationInfo.dataDir + "/files/scatch.jpg";
 
 	        FileOutputStream fos = new FileOutputStream(s);
 	        bitmap.compress(Bitmap.CompressFormat.JPEG, 95, fos);
@@ -237,7 +237,7 @@ public class Controller{
 		activity.setResult(0x0ba7c0df, returnIntent);
 		activity.finish();
 	    } catch (Exception e) {
-	        // handle
+	        logger.d(e.message);
 	    }
 
 
