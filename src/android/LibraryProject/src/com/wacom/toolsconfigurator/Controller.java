@@ -218,15 +218,26 @@ public class Controller{
 	    bitmap.copyPixelsFromBuffer(sbuf);
 
 	    try {
-	        FileOutputStream fos = new FileOutputStream("/sdcard/screeshot.jpg");
-	        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+		PackageManager m = activity.getPackageManager();
+		String s = activity.getPackageName();
+		PackageInfo p = m.getPackageInfo(s, 0);
+		s = p.applicationInfo.dataDir + "/images/scatch.jpg";
+
+	        FileOutputStream fos = new FileOutputStream(s);
+	        bitmap.compress(Bitmap.CompressFormat.JPEG, 95, fos);
 	        fos.flush();
 	        fos.close();
+			
+		Intent returnIntent = new Intent();
+		activity.returnIntent.putExtra("FILE", s);
+		activity.setResult(code, returnIntent);
+		activity.finish();
 	    } catch (Exception e) {
 	        // handle
 	    }
 
-		
+
+
 		 return true;
 	}
 	
