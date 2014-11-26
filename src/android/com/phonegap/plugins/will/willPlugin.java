@@ -13,7 +13,9 @@ public class willPlugin  extends CordovaPlugin 	{
 public static final int REQUEST_CODE = 0x0ba7c0df;
 	public static final String ACTION_ADD_WILL_ENTRY = "addWillEntry"; 
 	private static final String WILL_INTENT = "com.wacom.toolsconfigurator.MAIN";
+	private static final String FILE = "file";
 	public boolean loaded=false;
+	private static final String CANCELLED = "cancelled";
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
@@ -51,28 +53,26 @@ public static final int REQUEST_CODE = 0x0ba7c0df;
             if (resultCode == Activity.RESULT_OK) {
                 JSONObject obj = new JSONObject();
                 try {
-                    obj.put(TEXT, intent.getStringExtra("SCAN_RESULT"));
-                    obj.put(FORMAT, intent.getStringExtra("SCAN_RESULT_FORMAT"));
+                    obj.put(FILE, intent.getStringExtra("FILE_RESULT"));
                     obj.put(CANCELLED, false);
                 } catch (JSONException e) {
-                    Log.d(LOG_TAG, "This should never happen");
+                    //Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
-                this.callbackContext.success(obj);
+                cordova.callbackContext.success(obj);
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 JSONObject obj = new JSONObject();
                 try {
                     obj.put(TEXT, "");
-                    obj.put(FORMAT, "");
                     obj.put(CANCELLED, true);
                 } catch (JSONException e) {
-                    Log.d(LOG_TAG, "This should never happen");
+                    //Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
-                this.callbackContext.success(obj);
+                cordova.callbackContext.success(obj);
             } else {
                 //this.error(new PluginResult(PluginResult.Status.ERROR), this.callback);
-                this.callbackContext.error("Unexpected error");
+                cordova.callbackContext.error("Unexpected error");
             }
         }
     }
